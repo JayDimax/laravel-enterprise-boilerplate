@@ -5,15 +5,15 @@ DONT FORGET TO GIVE STAR! THANK YOU!
 
 ## Screenshots
 
-### Login Screen
+### Dashboard Desktop
 
 ![Dashboard](.tmp/login-desktop.png)
 
-### Dashboard Desktop
+### Landing Page
 
 ![Landing Page](.tmp/dashboard-desktop.png)
 
-### Dashboard Mobile
+### Login Form
 
 ![Login Form](.tmp/dashboard-mobile.png)
 
