@@ -7,15 +7,15 @@ DONT FORGET TO GIVE STAR! THANK YOU!
 
 ### Login Screen
 
-![Login Screen](.tmp/login-desktop.png)
+![Dashboard](.tmp/login-desktop.png)
 
 ### Dashboard Desktop
 
-![Dashboard Desktop](.tmp/dashboard-desktop.png)
+![Landing Page](.tmp/dashboard-desktop.png)
 
 ### Dashboard Mobile
 
-![Dashboard Mobile](.tmp/dashboard-mobile.png)
+![Login Form](.tmp/dashboard-mobile.png)
 
 ## Features
 
