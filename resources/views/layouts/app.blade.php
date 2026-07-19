@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ sidebar:false, dark: localStorage.theme === 'dark', notices:false, userMenu:false }" :class="{ 'dark': dark }">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ sidebar:false, dark: localStorage.theme === 'dark', notices:false, userMenu:false, search:'' }" :class="{ 'dark': dark }">
 <head>
     <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title ?? 'Workspace' }} - {{ config('app.name', 'Laravel Enterprise') }}</title>
@@ -40,7 +40,11 @@
     <header class="sticky top-0 z-30 flex h-16 items-center border-b border-[#eadfd8] bg-white/95 px-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:px-6">
         <button @click="sidebar=true" class="mr-3 p-2 text-slate-500 lg:hidden" aria-label="Open menu"><x-icon name="menu" /></button>
         <div class="min-w-0 flex-1"><p class="truncate text-xs text-slate-500 dark:text-slate-400">Workspace / {{ $title ?? 'Dashboard' }}</p><p class="truncate text-sm font-semibold">{{ $title ?? 'Dashboard' }}</p></div>
-        <div class="hidden w-64 items-center gap-2 rounded-control border border-slate-200 bg-[#fffaf6] px-3 py-2 text-sm text-slate-500 md:flex dark:border-slate-700 dark:bg-slate-800"><x-icon name="search" /><span>Search workspace</span><kbd class="ml-auto text-xs">Ctrl K</kbd></div>
+        <div class="hidden w-64 items-center gap-2 rounded-control border border-slate-200 bg-[#fffaf6] px-3 py-2 text-sm text-slate-500 md:flex dark:border-slate-700 dark:bg-slate-800">
+            <x-icon name="search" />
+            <input x-ref="searchInput" x-model.debounce.150ms="search" @keydown.escape="search=''" @keydown.window.ctrl-k.prevent="$refs.searchInput.focus()" type="search" placeholder="Search workspace" class="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400 dark:text-slate-100" aria-label="Search workspace" />
+            <kbd class="ml-auto text-xs">Ctrl K</kbd>
+        </div>
         <button @click="dark=!dark; localStorage.theme=dark?'dark':'light'" class="ml-2 rounded-control p-2 text-slate-500 hover:bg-[#fff0e8] hover:text-accent" aria-label="Toggle dark mode"><x-icon name="moon" /></button>
         <button @click="notices=!notices" class="relative rounded-control p-2 text-slate-500 hover:bg-[#fff0e8] hover:text-accent" aria-label="Notifications"><x-icon name="bell" /><span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-accent ring-2 ring-white"></span></button>
         <div class="relative ml-2"><button @click="userMenu=!userMenu" class="flex items-center gap-2 border-l border-slate-200 pl-3"><span class="grid h-8 w-8 place-items-center rounded-full bg-primary text-xs font-bold text-white">{{ strtoupper(substr(Auth::user()->name,0,2)) }}</span><span class="hidden text-left text-xs sm:block"><b class="block">{{ Auth::user()->name }}</b><span class="text-slate-500">Administrator</span></span></button>
