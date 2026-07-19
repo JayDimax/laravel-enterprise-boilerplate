@@ -1,7 +1,7 @@
 # Laravel Enterprise Boilerplate
 
 Open source Laravel template with authentication, role/permission management, and other production-ready starter features.
-
+DONT FORGET TO GIVE STAR! THANK YOU!
 ## Features
 
 - Laravel 12 application structure
