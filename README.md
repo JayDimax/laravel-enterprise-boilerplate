@@ -9,13 +9,13 @@ DONT FORGET TO GIVE STAR! THANK YOU!
 
 ![Login Screen](.tmp/login-desktop.png)
 
-### Dashboard
+### Dashboard Desktop
 
-![Dashboard](.tmp/dashboard-desktop.png)
+![Dashboard Desktop](.tmp/dashboard-desktop.png)
 
-### Welcome Page
+### Dashboard Mobile
 
-![Welcome Page](.tmp/welcome-page-qp3nj3hg.sgo/desktop.png)
+![Dashboard Mobile](.tmp/dashboard-mobile.png)
 
 ## Features
 
