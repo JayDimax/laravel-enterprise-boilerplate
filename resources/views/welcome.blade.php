@@ -7,6 +7,14 @@
         ['label' => 'Release', 'value' => 'v'.$appVersion],
         ['label' => 'Database', 'value' => strtoupper(config('database.default'))],
     ];
+    $techMarquee = [
+        ['name' => 'Laravel', 'logo' => 'https://cdn.simpleicons.org/laravel/FF2D20'],
+        ['name' => 'MySQL', 'logo' => 'https://cdn.simpleicons.org/mysql/4479A1'],
+        ['name' => 'Tailwind CSS', 'logo' => 'https://cdn.simpleicons.org/tailwindcss/06B6D4'],
+        ['name' => 'Alpine.js', 'logo' => '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L4 16h5l3-5 3 5h5L12 2zm0 7l-1.8 3H13.8L12 9z" fill="currentColor"/></svg>'],
+        ['name' => 'Spatie', 'logo' => '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 3.2c4.3 0 7.8 3.5 7.8 7.8 0 1.7-.5 3.2-1.4 4.5l-1.7-1.2A6 6 0 0 0 18 12c0-3.3-2.7-6-6-6a6 6 0 0 0-4.3 1.8l-1.8-1.2A7.9 7.9 0 0 1 12 5.2zm-4.8 7.3L8.3 10l2.9 2.1L12 9l1.2 1.3 2.9-2.1 1.1 2.5-2.9 2.1L12 14.6l-1.2-1.3-2.9 2.1-1.1-2.5z" fill="currentColor"/></svg>'],
+        ['name' => 'Vite', 'logo' => 'https://cdn.simpleicons.org/vite/646CFF'],
+    ];
     $capabilities = [
         ['Authentication', 'Secure registration, login, password recovery, and email verification.', 'M12 3l7 4v5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V7l7-4zm0 5v4m0 4h.01'],
         ['User Management', 'A complete foundation for managing user accounts, profiles, and access.', 'M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2m7-10a4 4 0 100-8 4 4 0 000 8zm5 0v-2a4 4 0 00-3-3.87'],
@@ -24,7 +32,7 @@
     <title>Laravel Enterprise Boilerplate</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        [x-cloak]{display:none!important}b,strong{font-weight:600}.highlight{position:relative;z-index:0;color:#ff7f45}.highlight:after{content:"";position:absolute;z-index:-1;left:-.08em;right:-.08em;bottom:.05em;height:.34em;background:#ffe5d8}.dot-grid{background-image:radial-gradient(rgba(255,127,69,.35) 1px,transparent 1px);background-size:13px 13px}.chart-grid{background-image:linear-gradient(#e6ecec 1px,transparent 1px),linear-gradient(90deg,#e6ecec 1px,transparent 1px);background-size:36px 28px}.reveal{animation:reveal .65s ease-out both}.tech-marquee{position:relative;overflow:hidden}.tech-marquee:before,.tech-marquee:after{content:"";position:absolute;z-index:2;top:0;bottom:0;width:clamp(2rem,8vw,9rem);pointer-events:none}.tech-marquee:before{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}.tech-marquee:after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}.tech-marquee__track{display:flex;width:max-content;animation:tech-marquee 28s linear infinite;will-change:transform}.tech-marquee:hover .tech-marquee__track,.tech-marquee:focus-within .tech-marquee__track{animation-play-state:paused}.tech-marquee__group{display:flex;min-width:100vw;flex-shrink:0;align-items:center;justify-content:space-around;gap:clamp(2.5rem,6vw,7rem);padding:0 clamp(2.5rem,6vw,7rem);white-space:nowrap}.tech-marquee__item{font-weight:500}@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes tech-marquee{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{animation:none}.tech-marquee__track{width:100%;animation:none;will-change:auto}.tech-marquee__group{width:100%;min-width:0;flex-wrap:wrap;justify-content:center;white-space:normal}.tech-marquee__group[aria-hidden="true"]{display:none}*{transition-duration:.01ms!important}}
+        [x-cloak]{display:none!important}b,strong{font-weight:600}.highlight{position:relative;z-index:0;color:#ff7f45}.highlight:after{content:"";position:absolute;z-index:-1;left:-.08em;right:-.08em;bottom:.05em;height:.34em;background:#ffe5d8}.dot-grid{background-image:radial-gradient(rgba(255,127,69,.35) 1px,transparent 1px);background-size:13px 13px}.chart-grid{background-image:linear-gradient(#e6ecec 1px,transparent 1px),linear-gradient(90deg,#e6ecec 1px,transparent 1px);background-size:36px 28px}.reveal{animation:reveal .65s ease-out both}.tech-marquee{position:relative;overflow:hidden}.tech-marquee:before,.tech-marquee:after{content:"";position:absolute;z-index:2;top:0;bottom:0;width:clamp(2rem,8vw,9rem);pointer-events:none}.tech-marquee:before{left:0;background:linear-gradient(90deg,#fff,rgba(255,255,255,0))}.tech-marquee:after{right:0;background:linear-gradient(270deg,#fff,rgba(255,255,255,0))}.tech-marquee__track{display:flex;width:max-content;animation:tech-marquee 28s linear infinite;will-change:transform}.tech-marquee:hover .tech-marquee__track,.tech-marquee:focus-within .tech-marquee__track{animation-play-state:paused}.tech-marquee__group{display:flex;min-width:100vw;flex-shrink:0;align-items:center;justify-content:space-around;gap:clamp(1.5rem,4vw,4.5rem);padding:0 clamp(2.5rem,6vw,7rem);white-space:nowrap}.tech-marquee__item{font-weight:500}.tech-marquee__badge{display:inline-flex;align-items:center;gap:.65rem;color:#083b40}.tech-marquee__badge img,.tech-marquee__badge svg{display:block;height:1.15rem;width:1.15rem;object-fit:contain;flex-shrink:0}.tech-marquee__badge svg{color:currentColor}@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes tech-marquee{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{animation:none}.tech-marquee__track{width:100%;animation:none;will-change:auto}.tech-marquee__group{width:100%;min-width:0;flex-wrap:wrap;justify-content:center;white-space:normal}.tech-marquee__group[aria-hidden="true"]{display:none}*{transition-duration:.01ms!important}}
     </style>
 </head>
 <body class="overflow-x-hidden bg-white font-sans text-[#083b40] antialiased">
@@ -46,10 +54,32 @@
 <section class="tech-marquee border-b py-10" tabindex="0" aria-label="Technology stack">
     <div class="tech-marquee__track text-center text-lg text-slate-400">
         <ul class="tech-marquee__group" role="list">
-            @foreach(['Laravel','MySQL','Tailwind','Alpine','Spatie','Vite'] as $tech)<li class="tech-marquee__item">{{ $tech }}</li>@endforeach
+            @foreach($techMarquee as $tech)
+                <li class="tech-marquee__item">
+                    <span class="tech-marquee__badge">
+                        @if(str_starts_with($tech['logo'], '<svg'))
+                            {!! $tech['logo'] !!}
+                        @else
+                            <img src="{{ $tech['logo'] }}" alt="{{ $tech['name'] }} logo" />
+                        @endif
+                        <span>{{ $tech['name'] }}</span>
+                    </span>
+                </li>
+            @endforeach
         </ul>
         <ul class="tech-marquee__group" role="list" aria-hidden="true">
-            @foreach(['Laravel','MySQL','Tailwind','Alpine','Spatie','Vite'] as $tech)<li class="tech-marquee__item">{{ $tech }}</li>@endforeach
+            @foreach($techMarquee as $tech)
+                <li class="tech-marquee__item">
+                    <span class="tech-marquee__badge">
+                        @if(str_starts_with($tech['logo'], '<svg'))
+                            {!! $tech['logo'] !!}
+                        @else
+                            <img src="{{ $tech['logo'] }}" alt="{{ $tech['name'] }} logo" />
+                        @endif
+                        <span>{{ $tech['name'] }}</span>
+                    </span>
+                </li>
+            @endforeach
         </ul>
     </div>
 </section>
