@@ -2,6 +2,21 @@
 
 Open source Laravel template with authentication, role/permission management, and other production-ready starter features.
 DONT FORGET TO GIVE STAR! THANK YOU!
+
+## Screenshots
+
+### Login Screen
+
+![Login Screen](.tmp/login-desktop.png)
+
+### Dashboard
+
+![Dashboard](.tmp/dashboard-desktop.png)
+
+### Welcome Page
+
+![Welcome Page](.tmp/welcome-page-qp3nj3hg.sgo/desktop.png)
+
 ## Features
 
 - Laravel 12 application structure
