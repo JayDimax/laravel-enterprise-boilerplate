@@ -11,16 +11,16 @@
         <div>
             <x-input-label for="email" :value="__('Email address')" class="mb-2 font-medium text-[#073b40]" />
             <div class="relative">
-                <span class="pointer-events-none absolute inset-y-0 left-0 grid w-12 place-items-center border-r border-slate-200 text-[#073b40]" aria-hidden="true">@</span>
-                <x-text-input id="email" class="block h-[52px] w-full rounded-lg border-slate-300 pl-16 focus:border-[#ff7f45] focus:ring-[#ff7f45]" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                <span class="auth-input-icon pointer-events-none absolute inset-y-0 left-0 grid w-12 place-items-center text-[#073b40]" aria-hidden="true">@</span>
+                <x-text-input id="email" class="block h-[52px] w-full rounded-lg border-slate-300 pl-14" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
         <div>
             <x-input-label for="password" :value="__('Password')" class="mb-2 font-medium text-[#073b40]" />
             <div class="relative">
-                <span class="pointer-events-none absolute inset-y-0 left-0 grid w-12 place-items-center border-r border-slate-200 text-[#073b40]" aria-hidden="true">●</span>
-                <x-text-input id="password" class="block h-[52px] w-full rounded-lg border-slate-300 pl-16 focus:border-[#ff7f45] focus:ring-[#ff7f45]" type="password" name="password" required autocomplete="current-password" />
+                <span class="auth-input-icon pointer-events-none absolute inset-y-0 left-0 grid w-12 place-items-center text-[#073b40]" aria-hidden="true">●</span>
+                <x-text-input id="password" class="block h-[52px] w-full rounded-lg border-slate-300 pl-14" type="password" name="password" required autocomplete="current-password" />
             </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
