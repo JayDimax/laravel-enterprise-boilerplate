@@ -1,0 +1,1 @@
+@props(['label','name','type'=>'text','error'=>null])<label class="block"><span class="app-label">{{ $label }}@if($attributes->has('required')) <span class="text-red-600">*</span>@endif</span><input name="{{ $name }}" type="{{ $type }}" {{ $attributes->merge(['class'=>'app-field']) }}>@if($error)<span class="mt-1 block text-xs text-red-600">{{ $error }}</span>@endif</label>

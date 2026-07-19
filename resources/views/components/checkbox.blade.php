@@ -1,0 +1,1 @@
+@props(['name'])<label class="flex items-start gap-3 text-sm"><input name="{{ $name }}" type="checkbox" {{ $attributes->merge(['class'=>'mt-0.5 border-slate-300 text-primary focus:ring-primary']) }}><span>{{ $slot }}</span></label>

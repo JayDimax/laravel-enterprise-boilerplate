@@ -1,0 +1,1 @@
+@props(['active'=>false,'icon'=>'home','href'=>'#'])<a href="{{ $href }}" @class(['flex items-center gap-3 rounded-md border-l-2 px-3 py-2.5 font-medium transition','border-accent bg-white/10 text-white shadow-sm'=>$active,'border-transparent text-[#b7d8d3] hover:bg-white/5 hover:text-white'=>!$active])><x-icon :name="$icon" class="h-4 w-4"/><span>{{ $slot }}</span></a>

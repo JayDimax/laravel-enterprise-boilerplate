@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    [x-cloak] { display: none !important; }
+    html { color-scheme: light; }
+    html.dark { color-scheme: dark; }
+    body { @apply bg-mist font-normal text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-200; letter-spacing: -0.005em; }
+    ::selection { @apply bg-accent text-navy; }
+    :focus-visible { @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-white dark:ring-offset-slate-950; }
+    h1, h2, h3, h4 { @apply font-semibold tracking-tight; }
+    input:not([type='checkbox']):not([type='radio']):not([type='hidden']), select, textarea { @apply border-dashed; }
+}
+
+@layer components {
+    .app-field { @apply w-full rounded-control border-dashed border-slate-300 bg-white text-sm shadow-sm transition placeholder:text-slate-400 focus:border-accent focus:ring-accent disabled:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:disabled:bg-slate-800; }
+    .app-label { @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-200; }
+    .app-panel { @apply rounded-card border border-slate-200/90 bg-white shadow-card dark:border-slate-800 dark:bg-slate-900; }
+    .profile-module button { @apply rounded-none; }
+}
+
+@media print {
+    aside, header, footer, button { display: none !important; }
+    .lg\:pl-64 { padding-left: 0 !important; }
+    main { padding: 0 !important; }
+}

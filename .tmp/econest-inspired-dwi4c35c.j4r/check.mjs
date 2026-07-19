@@ -1,0 +1,21 @@
+import { chromium } from 'file:///C:/Users/jaydi/.agents/skills/playwright/node_modules/playwright-core/index.mjs';
+
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({ viewport: { width: 375, height: 812 } });
+const consoleErrors = [];
+const failedRequests = [];
+page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()); });
+page.on('requestfailed', request => failedRequests.push(`${request.url()} :: ${request.failure()?.errorText}`));
+const response = await page.goto('http://127.0.0.1:8140/', { waitUntil: 'networkidle' });
+const before = await page.evaluate(() => ({ width: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+const menu = page.locator('#mobile-menu');
+const button = page.getByRole('button', { name: 'Toggle navigation' });
+const hiddenBefore = !(await menu.isVisible());
+await button.click();
+const shownAfterOpen = await menu.isVisible();
+const expandedAfterOpen = await button.getAttribute('aria-expanded');
+const menuStateAfterOpen = await menu.evaluate(element => { const style = getComputedStyle(element); const rect = element.getBoundingClientRect(); return { display: style.display, visibility: style.visibility, opacity: style.opacity, rect: { x: rect.x, y: rect.y, width: rect.width, height: rect.height }, hidden: element.hidden, xCloak: element.hasAttribute('x-cloak'), outer: element.outerHTML.slice(0, 220) }; });
+await page.keyboard.press('Escape');
+const hiddenAfterEscape = !(await menu.isVisible());
+console.log(JSON.stringify({ status: response?.status(), overflow: before.width > before.client, dimensions: before, hiddenBefore, shownAfterOpen, expandedAfterOpen, menuStateAfterOpen, hiddenAfterEscape, consoleErrors, failedRequests }, null, 2));
+await browser.close();

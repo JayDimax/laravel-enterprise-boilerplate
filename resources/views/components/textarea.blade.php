@@ -1,0 +1,1 @@
+@props(['label','name'])<label class="block"><span class="app-label">{{ $label }}</span><textarea name="{{ $name }}" rows="4" {{ $attributes->merge(['class'=>'app-field']) }}>{{ $slot }}</textarea></label>

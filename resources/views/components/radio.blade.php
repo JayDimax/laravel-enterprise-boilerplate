@@ -1,0 +1,1 @@
+@props(['name','value'])<label class="flex items-center gap-2 text-sm"><input name="{{ $name }}" value="{{ $value }}" type="radio" {{ $attributes->merge(['class'=>'border-slate-300 text-primary focus:ring-primary']) }}><span>{{ $slot }}</span></label>

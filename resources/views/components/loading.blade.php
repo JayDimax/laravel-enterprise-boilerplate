@@ -1,0 +1,1 @@
+<div {{ $attributes->merge(['class'=>'flex items-center gap-3 py-6 text-sm text-slate-500']) }}><span class="h-5 w-5 animate-spin rounded-full border-2 border-primary border-r-transparent"></span>{{ $slot->isEmpty() ? 'Loading…' : $slot }}</div>
